@@ -1,0 +1,178 @@
+<mat-dialog-content>
+
+            <div class="tg-border-heading">
+                <h3>Signup</h3>
+            </div>
+            <div> 
+                <h4>You are </h4>
+                
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-6" >
+                        <input style="width: 100%;" type="radio" class="btn-check"(change)="onItemChange($event)" value="client" [(ngModel)]="type"  name="options" id="client" autocomplete="off" checked />
+                <label style="width: 100%;" class="btn btn-secondary" for="client" >Client</label>
+              </div>
+              <div class="col-6">
+                <input type="radio" style="width: 100%;"class="btn-check" (change)="onItemChange($event)" value="proprietaire" [(ngModel)]="type" name="options" id="proprietaire" autocomplete="off" />
+                <label style="width: 100%;" class="btn btn-secondary" for="proprietaire">Proprietaire</label>
+              
+                    </div>
+                </div>
+                
+              </div>
+            <form class="tg-loginform" method="post"  [formGroup]="editForm" *ngIf="type==='proprietaire'" 
+                    name="form"
+                    (ngSubmit)="doRegister()"
+                    #f="ngForm"
+                    novalidate>
+                    <div class="form-group">
+                        <div
+                        class="alert alert-danger"
+                        role="alert"
+                        *ngIf="f.submitted && isRegisterFailedbyuser">
+                        {{ userMessage }}
+                </div>
+            </div>
+      
+                <fieldset>
+                    <div class="form-group">
+                        <input type="text" matInput  formControlName="nom" class="validate" name="nom" class="form-control" placeholder="nom">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" matInput  formControlName="prenom" class="validate" name="prenom" class="form-control" placeholder="prenom">
+                    </div>
+                    <div class="form-group">
+                    <div
+                    class="alert alert-danger"
+                    role="alert"
+                    *ngIf="f.submitted && isRegisterFailedbyemail"
+                  >
+                     {{ emailMessage }}
+                     </div>
+                     </div>
+                    <div class="form-group">
+                      
+                        <input type="email" matInput  formControlName="email" class="validate" name="email" class="form-control" placeholder="email">
+                    </div>
+                    
+                   
+                    <div class="form-group">
+                        <input type="username" matInput  formControlName="username" class="validate" name="username" class="form-control" placeholder="username">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" matInput  formControlName="password" class="validate" name="password" class="form-control" placeholder="password">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" matInput  formControlName="passconf" class="validate" name="passconf" class="form-control" placeholder="repassword">
+                    </div>
+                    <div class="form-group">
+                        <div
+                          class="alert alert-danger"
+                          role="alert"
+                          *ngIf="f.submitted && !isPasswordVerified"
+                        >
+                           {{ passMessage }}
+                        </div>
+                      </div>
+                
+                
+                    <div class="form-group">
+                        <input type="text" matInput  formControlName="cin" class="validate" name="cin" class="form-control" placeholder="cin">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" matInput  formControlName="age" class="validate" name="age" class="form-control" placeholder="age">
+                    </div>
+                    <div class="form-group">
+                        <div class="tg-note">
+                            <i class="fa fa-exclamation-circle"></i>
+                            <span>We will email you your password.</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Login Now" class="tg-btn tg-btn-lg">
+                    </div>
+                    <div class="tg-description">
+                        <p>Already have an account? <a href="#">Login</a></p>
+                    </div>
+                </fieldset>
+            </form>
+
+
+
+
+
+
+            <form class="tg-loginform" method="post"  [formGroup]="editForm2" *ngIf="type==='client'" 
+            name="form2"
+            (ngSubmit)="doRegister()"
+            #f2="ngForm"
+            novalidate>
+            <div class="form-group">
+                <div
+                  class="alert alert-danger"
+                  role="alert"
+                  *ngIf="f2.submitted && isRegisterFailedbyuser"
+                >
+                   {{ userMessage }}
+                </div>
+              </div>
+              
+                        <fieldset>
+                            <div class="form-group">
+                                <input type="text" matInput  formControlName="nom" class="validate" name="nom" class="form-control" placeholder="nom">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" matInput  formControlName="prenom" class="validate" name="prenom" class="form-control" placeholder="prenom">
+                            </div>
+                            <div class="form-group">
+                            <div
+                            class="alert alert-danger"
+                            role="alert"
+                            *ngIf="f2.submitted && isRegisterFailedbyemail"
+                          >
+                             {{ emailMessage }}
+                             </div>
+                             </div>
+                            <div class="form-group">
+                              
+                                <input type="email" matInput  formControlName="email" class="validate" name="email" class="form-control" placeholder="email">
+                            </div>
+                            
+                           
+                            <div class="form-group">
+                                <input type="username" matInput  formControlName="username" class="validate" name="username" class="form-control" placeholder="username">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" matInput  formControlName="password" class="validate" name="password" class="form-control" placeholder="password">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" matInput  formControlName="passconf" class="validate" name="passconf" class="form-control" placeholder="repassword">
+                            </div>
+                            <div class="form-group">
+                                <div
+                                  class="alert alert-danger"
+                                  role="alert"
+                                  *ngIf="f2.submitted && !isPasswordVerified"
+                                >
+                                   {{ passMessage }}
+                                </div>
+                              </div>
+                        
+                            <div class="form-group">
+                                <div class="tg-note">
+                                    <i class="fa fa-exclamation-circle"></i>
+                                    <span>We will email you your password.</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Login Now" class="tg-btn tg-btn-lg">
+                            </div>
+                            <div class="tg-description">
+                                <p>Already have an account? <a href="#">Login</a></p>
+                            </div>
+                        </fieldset>
+                    </form>
+
+
+</mat-dialog-content>

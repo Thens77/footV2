@@ -1,0 +1,58 @@
+<section id="back" class="map_wrapper clearfix">
+    <div id=map-section></div>
+    <div class=container>
+        <div class=row>
+            <div class=contact_form>
+                <h2 class=heading>Ajouter un nouveau <span> Creneau</span></h2>
+
+                <p class=headParagraph>Veuillez saisir les informations pour ajouter un nouveau creneau.</p>
+
+      <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+        <div class="row">
+            <div class="input-field col s6" [hidden]="creneau.id===undefined">
+                <input type="text" class="form-control"  id="id" name="id" [(ngModel)]="creneau.id" formControlName="id" readonly>
+                <label class="">Id</label>
+            </div>
+        </div>
+           
+        
+        <div class="row text-center">
+            <div class="col-8">
+                <label class="text-white">heure Fin</label>
+           
+                <mat-form-field  class="text-white" appearance="outline">
+                    <mat-label>Input type time</mat-label>
+                    <input type="time" matInput class="form-control" class="bg-white text-black" name="week" [(ngModel)]="creneau.heureDebut" id="heureDebut" name="heureDebut"  formControlName="heureDebut"  min="09:00" max="18:00">
+                 </mat-form-field>      
+            <label class="text-white" >heure Debut</label>
+                <mat-form-field  class="text-white" appearance="outline">
+                    <mat-label >Input type time</mat-label>
+                    <input type="time" matInput class="form-control" class="bg-white text-black"  name="week" [(ngModel)]="creneau.heureFin" id="heureFin" name="heureFin"  formControlName="heureFin"  min="09:00" max="18:00">
+                 </mat-form-field>
+                
+                 <div class="form-group" hidden>
+                    <input required="true" type="text" placeholder="club" class="form-control" id="club" name="club" [(ngModel)]=" creneau.club" formControlName="club">
+                </div>
+            </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-4"><button class="btn btn-info m-3" type="submit"> Enregistrer </button> </div>
+            </div>
+            
+            
+           
+           
+            
+  
+        
+
+
+        
+
+    </form>
+    
+    </div>
+</div>
+</div>
+
+</section>

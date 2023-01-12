@@ -1,0 +1,61 @@
+<table class="table align-middle mb-0 bg-white">
+    <thead class="bg-light">
+      <tr>
+        <th>Id</th>
+        <th>Description</th>
+        <th>nombre de joueurs</th>
+        <th>prix</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let terrain of terrains">
+        <td>
+            <p class="fw-normal mb-1">{{terrain.id}}</p>
+           
+          </td>
+        <td>
+          <div class="d-flex align-items-center">
+             <img [src]="terrain.picByte"
+                alt=""
+                style="width: 45px; height: 45px"
+                class="rounded-circle"
+                />
+            <div class="ms-3">
+              <p class="fw-bold mb-1">{{terrain.description}}</p>
+              <p class="text-muted mb-0">{{terrain.size}}</p>
+            </div>
+          </div>
+        </td>
+        <td>
+            <p class="fw-normal mb-1">{{terrain.nbrJoueurs}}</p>
+          
+          </td>
+        <td>
+          <p class="fw-normal mb-1">{{terrain.prix}}</p>
+        
+        </td>
+      
+       
+        <td>
+          <button type="button" [routerLink]="['/dashboard/client', terrain.id, 'details']" class="btn btn-primary m-3" data-cy="entityDetailsButton">
+          
+            <i class="far fa-eye"></i>
+          </button>
+        
+          
+<button type="submit" [routerLink]="['/dashboard', terrain.id , 'gestion']" class="btn btn-success m-3" data-cy="entityEditButton">
+
+<i class="fas fa-edit"></i> 
+</button>
+
+
+
+    <button type="submit"  class="btn btn-danger m-3" data-cy="entityDeleteButton">
+    <i class="far fa-trash-alt"></i> 
+    </button>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,64 @@
+<section id="back" class="map_wrapper clearfix">
+    <div id=map-section></div>
+    <div class=container>
+        <div class=row>
+            <div class=contact_form>
+                <h2 class=heading>Ajouter un nouveau <span> CLub </span></h2>
+
+                <p class=headParagraph>Veuillez saisir les informations pour ajouter un nouveau club.</p>
+
+                <form class="formcontact clearfix" name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+                    
+
+                        
+                            <div [hidden]="club.id===undefined" class="form-group "  >
+                              
+                              <input  type="text" placeholder="id" class="form-control" id="id" name="id" [(ngModel)]="club.id" formControlName="id" readonly>
+                            </div>
+
+                           
+                            
+                            <div class="form-group"  >
+                              <input required="true" type="text" placeholder="Nom du societe" class="form-control" id="sosName" name="sosName" [(ngModel)]="club.sosName" formControlName="sosName" >
+        
+                            </div>
+                         
+
+                         
+                            <div class="form-group"  >
+                              <input required="true" type="text" placeholder="Nom du Club" class="form-control" id="clubName" name="clubName" [(ngModel)]="club.clubName" formControlName="clubName" >
+        
+                            </div>
+
+                           
+                                <div class="form-group"  >
+                                  <input required="true" type="text" placeholder="Id Fiscal" class="form-control" id="idFiscal" name="idFiscal" [(ngModel)]="club.idFiscal" formControlName="idFiscal" >
+            
+                                </div>
+
+                          
+                                <div class="form-group"  >
+                                  <input required="true" type="text" placeholder="Description" class="form-control" id="description" name="description" [(ngModel)]="club.description" formControlName="description" >
+            
+                                </div>
+
+                               
+
+                                <div class="form-group"  >
+                                  <input type="file"  (change)="onFileChanged($event)">
+                                  <img [src]="imgURL" height="200" *ngIf="imgURL">   
+                                   
+                                 
+                                  </div>
+                                  <div class="map-container" style="width: 100%; height:200px ; background-color: white;color: black;" #map></div>
+                   
+                 
+                   
+
+                    <button type=submit class="btn btn-red" id=send>send Us</button>
+                    <div class=form-message></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,225 @@
+<div class=wrapper>
+    <header class=header-main>
+        <div class=header-upper>
+            <div class=container>
+                <div class=row>
+
+                    <ul>
+                        <li><a >home</a></li>
+                        <li><a  ><i class="fa fa-shopping-cart"></i> <span style="color:aquamarine" (click)="loginService.logout()">deconnexion<span
+                            class=>0</span>)</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header-lower clearfix">
+            <div class=container>
+                <div class=row>
+                    <h1 class=logo>
+                        <a href=index-2.html><img src="../../assets/images/logo.png " alt=image></a>
+                    </h1>
+
+                    <div class=menubar>
+                        <nav class=navbar>
+                            <div class=nav-wrapper>
+                                <div class=navbar-header>
+                                    <button type=button class=navbar-toggle><span class=sr-only>Toggle navigation</span>
+                                        <span class=icon-bar></span></button>
+                                </div>
+                                <div class=nav-menu>
+                                    <ul class="nav navbar-nav menu-bar">
+                                        <li><a [routerLink]="['/clienthome']" >Home <span></span> <span></span>
+                                                <span></span> <span></span></a></li>
+                                        <li><a [routerLink]="['/clientreserv']" class=active>Mes reservation <span></span> <span></span> <span></span>
+                                                <span></span></a></li>
+                                       
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class=social><a href="https://www.facebook.com/templatespoint.net" class=facebook><i
+                                class="fa fa-facebook"></i></a> <a href="https://twitter.com/itobuztech" class=twitter><i class="fa fa-twitter"></i></a> <a href="https://www.behance.net/" class=behance><i class="fa fa-behance"></i></a></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+     
+    <section class=latestResult>
+        <div class=container>
+            
+
+            <li *ngFor="let rese of reserv" role="presentation" class="active">
+                <a href="#one" aria-controls="one" role="tab" data-toggle="tab">
+                    <div class="tg-ticket">
+                        <time class="tg-matchdate" datetime="2016-05-03">{{rese.reservation.id}}<span></span></time>
+                        <div class="tg-matchdetail">
+                            <span class="tg-theme-tag"><span>Date </span> {{rese.reservation.date}}</span>
+                            <h4> <span>Terrain </span> {{rese.reservation.terrain?.description}} </h4>
+                            <ul class="tg-matchmetadata">
+                                <li><time datetime="2016-05-03">De {{rese.reservation.creneau?.heureDebut}} a {{rese.reservation.creneau?.heureFin}}</time></li>
+                                <li><address></address></li>
+                            </ul>
+                        </div>
+                        <div class="tg-btnsbox" *ngIf="rese.reservation.etat===false">
+                            <span class="tg-btn" (click)="diss(rese.id)">Supprimer</span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+
+
+
+
+        </div>
+    </section>
+    
+    
+   
+   
+   
+    <footer class=footer-type01>
+        <div class=container>
+            <div class=row>
+                <ul class=footer-widget>
+                    <li class=widget-about>
+                        <h4 class=footerheading>about <span>soccer club</span></h4>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis vitae, velit perferendis dolor atque magni, porro minus repellendus nostrum alias ea deserunt. Vel quam explicabo laudantium accusamus est, nulla minima!</p>
+
+                        <p><span class=uppercaseheading>address:</span><span class=red>239</span> main street London,England.
+                        </p>
+
+                        <p><span class=uppercaseheading>call:</span> <span class=red>1800-2222-3333</span></p>
+                    </li>
+                    <li class=widget-news>
+                        <h4 class=footerheading>recent <span>news</span></h4>
+                        <ul class="widget-newsdetails clearfix">
+                            <li class=clearfix>
+                                <a href="#" class=clearfix>
+                                    <div class=widget-pic style="background:url(../../../../assets/images/widget/widget01.jpg) center no-repeat">
+                                    </div>
+                                    <div class=widget-newsinfo>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam soluta excepturi.
+                                        </p>
+
+                                        <p class=uppercaseheading>18 september ,<span class=red>2015</span></p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class=clearfix>
+                                <a href="#" class=clearfix>
+                                    <div class=widget-pic style="background:url(../../../../assets/images/widget/widget02.jpg) center no-repeat">
+                                    </div>
+                                    <div class=widget-newsinfo>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam soluta excepturi.
+                                        </p>
+
+                                        <p class=uppercaseheading>18 september ,<span class=red>2015</span></p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class=clearfix>
+                                <a href="#" class=clearfix>
+                                    <div class=widget-pic style="background:url(../../../../assets/images/widget/widget03.jpg) center no-repeat">
+                                    </div>
+                                    <div class=widget-newsinfo>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam soluta excepturi.
+                                        </p>
+
+                                        <p class=uppercaseheading>18 september ,<span class=red>2015</span></p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class=widget-product>
+                        <h4 class=footerheading>real <span>soccer products</span></h4>
+                        <ul class=widget_productdetails>
+                            <li><a href=#>shoes(4)</a></li>
+                            <li><a href=#>men(4)</a></li>
+                            <li><a href=#>t-shirt(4)</a></li>
+                            <li><a href=#>sports(4)</a></li>
+                            <li><a href="#">glass</a></li>
+                        </ul>
+                    </li>
+                    <li class=widget-comment>
+                        <h4 class=footerheading>recent <span>comments</span></h4>
+                        <ul class=widget_commentDetails>
+                            <li>
+                                <a href=# class=clearfix>
+                                    <div class=comment-pic>
+                                        <div class=columnpic><img src="../../../../assets/images/widget/comment01.jpg" alt=image></div>
+                                    </div>
+                                    <div class=commentinfo>
+                                        <p class=uppercaseheading>jhon doe</p>
+
+                                        <p>18 April ,<span class=red>2015</span></p>
+
+                                        <p>nice and cool</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href=# class=clearfix>
+                                    <div class=comment-pic>
+                                        <div class=columnpic><img src="../../../../assets/images/widget/comment02.jpg" alt=image></div>
+                                    </div>
+                                    <div class=commentinfo>
+                                        <p class=uppercaseheading>jhon doe</p>
+
+                                        <p>18 April ,<span class=red>2015</span></p>
+
+                                        <p>nice and cool</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href=# class=clearfix>
+                                    <div class=comment-pic>
+                                        <div class=columnpic><img src="../../../../assets/images/widget/comment03.jpg" alt=image></div>
+                                    </div>
+                                    <div class=commentinfo>
+                                        <p class=uppercaseheading>jhon doe</p>
+
+                                        <p>18 April ,<span class=red>2015</span></p>
+
+                                        <p>nice and cool</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class=footer-type02>
+            <div class=container>
+                <div class=row>
+                    <a href=index-2.html class=footer-logo><img src="../../../../assets/images/logo.png" alt=image></a>
+
+                    <div class=footer-container>
+                        <ul class=clearfix>
+                            <li><a href="https://www.facebook.com/templatespoint.net" class=bigsocial-link><i
+                                        class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/" class=bigsocial-link target=_blank><i
+                                        class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.behance.net/" class=bigsocial-link target=_blank><i
+                                        class="fa fa-behance"></i></a></li>
+                        </ul>
+                        <p><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></p>
+                    </div>
+                    <div class=footer-appstore>
+                        <figure>
+                            <a href=#><img src="../../../../assets/images/appstore/apple.png" alt=image></a>
+                        </figure>
+                        <figure>
+                            <a href=#><img src="../../../../assets/images/appstore/google.png" alt=image></a>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>

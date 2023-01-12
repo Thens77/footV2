@@ -1,0 +1,27 @@
+<section id="back" class="map_wrapper clearfix">
+    <div id=map-section></div>
+    <div class=container>
+        <div class=row>
+            <div class=contact_form>
+                <form name="editForm" role="form" novalidate  [formGroup]="editForm">    
+                <h2 class=heading>Calendrier des <span> Reservations </span></h2>
+                <ng-multiselect-dropdown 
+                (ngModelChange)="onChange($event)"
+                [(ngModel)]="selectedItemsRoot"
+                [placeholder]="'Choisir les matieres de la formation'"
+                [settings]="dropdownSettings"
+                [data]='dropdownList'
+               
+                class="form-control" id="terrain" data-cy="terrain" name="terrain" formControlName="terrain"
+              >
+              </ng-multiselect-dropdown>
+              <input type="submit" value="yo">
+              </form>
+                <div class="container">
+                    <full-calendar [options]="calendarOptions" ></full-calendar>
+                  </div>
+            </div>
+        </div>
+    </div>
+</section>
+

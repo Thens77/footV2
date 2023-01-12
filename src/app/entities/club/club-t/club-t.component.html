@@ -1,0 +1,205 @@
+<div class=wrapper>
+    <header class=header-main>
+        <div class=header-upper>
+            <div class=container>
+                <div class=row>
+                    <ul>
+                        <li><a [routerLink]="['/clienthome']" style="color:aquamarine"> Home </a></li>
+                        <li><a  ><i class="fa fa-shopping-cart"></i> <span style="color:aquamarine" (click)="loginService.logout()">deconnexion<span
+                                        class=>0</span>)</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header-lower clearfix">
+            <div class=container>
+                <div class=row>
+                    <h1 class=logo>
+                        <a href=index-2.html><img [src]="club?.picByte" alt="image"></a>
+                    </h1>
+
+                    <div class=menubar>
+                        <nav class=navbar>
+                            <div class=nav-wrapper>
+                                <div class=navbar-header>
+                                    <button type=button class=navbar-toggle><span class=sr-only>Toggle navigation</span>
+                                        <span class=icon-bar></span></button>
+                                </div>
+                                <div class=nav-menu>
+                                    <ul class="nav navbar-nav menu-bar">
+                                        <li><a [routerLink]="['home']">Club Home<span></span> <span></span>
+                                                <span></span> <span></span></a></li>
+                                        <li><a [routerLink]="['terrains']">Nos terrains<span></span> <span></span>
+                                                    <span></span> <span></span></a></li>
+                                        <li><a [routerLink]="['matches']">Trouver un match<span></span> <span></span>
+                                                        <span></span> <span></span></a></li>
+                                        <li><a href=about.html>about <span></span> <span></span> <span></span>
+                                                <span></span></a></li>
+                                       
+                                        <li><a href=contact.html>contact <span></span> <span></span> <span></span>
+                                                <span></span></a></li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class=social><a href="https://www.facebook.com/templatespoint.net" class=facebook><i
+                                class="fa fa-facebook"></i></a> <a href="https://twitter.com/itobuztech" class=twitter><i
+                                class="fa fa-twitter"></i></a> <a href="https://www.behance.net/" class=behance><i
+                                class="fa fa-behance"></i></a></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <router-outlet [id]="idc" ></router-outlet>
+    
+    <footer class=footer-type01>
+        <div class=container>
+            <div class=row>
+                <ul class=footer-widget>
+                    <li class=widget-about>
+                        <h4 class=footerheading>about <span>soccer club</span></h4>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis vitae, velit perferendis dolor atque magni, porro minus repellendus nostrum alias ea deserunt. Vel quam explicabo laudantium accusamus est, nulla minima!</p>
+
+                        <p><span class=uppercaseheading>address:</span><span class=red>239</span> main street London,England.
+                        </p>
+
+                        <p><span class=uppercaseheading>call:</span> <span class=red>1800-2222-3333</span></p>
+                    </li>
+                    <li class=widget-news>
+                        <h4 class=footerheading>recent <span>news</span></h4>
+                        <ul class="widget-newsdetails clearfix">
+                            <li class=clearfix>
+                                <a href="#" class=clearfix>
+                                    <div class=widget-pic style="background:url(../../../../assets/images/widget/widget01.jpg) center no-repeat"></div>
+                                    <div class=widget-newsinfo>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam soluta excepturi.
+                                        </p>
+
+                                        <p class=uppercaseheading>18 september ,<span class=red>2015</span></p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class=clearfix>
+                                <a href="#" class=clearfix>
+                                    <div class=widget-pic style="background:url(../../../../assets/images/widget/widget02.jpg) center no-repeat"></div>
+                                    <div class=widget-newsinfo>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam soluta excepturi.
+                                        </p>
+
+                                        <p class=uppercaseheading>18 september ,<span class=red>2015</span></p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class=clearfix>
+                                <a href="#" class=clearfix>
+                                    <div class=widget-pic style="background:url(../../../../assets/images/widget/widget03.jpg) center no-repeat"></div>
+                                    <div class=widget-newsinfo>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam soluta excepturi.
+                                        </p>
+
+                                        <p class=uppercaseheading>18 september ,<span class=red>2015</span></p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class=widget-product>
+                        <h4 class=footerheading>real <span>soccer products</span></h4>
+                        <ul class=widget_productdetails>
+                            <li><a href=#>shoes(4)</a></li>
+                            <li><a href=#>men(4)</a></li>
+                            <li><a href=#>t-shirt(4)</a></li>
+                            <li><a href=#>sports(4)</a></li>
+                            <li><a href="#">glass</a></li>
+                        </ul>
+                    </li>
+                    <li class=widget-comment>
+                        <h4 class=footerheading>recent <span>comments</span></h4>
+                        <ul class=widget_commentDetails>
+                            <li>
+                                <a href=# class=clearfix>
+                                    <div class=comment-pic>
+                                        <div class=columnpic><img src="../../../../assets/images/widget/comment01.jpg" alt=image></div>
+                                    </div>
+                                    <div class=commentinfo>
+                                        <p class=uppercaseheading>jhon doe</p>
+
+                                        <p>18 April ,<span class=red>2015</span></p>
+
+                                        <p>nice and cool</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href=# class=clearfix>
+                                    <div class=comment-pic>
+                                        <div class=columnpic><img src="../../../../assets/images/widget/comment02.jpg" alt=image></div>
+                                    </div>
+                                    <div class=commentinfo>
+                                        <p class=uppercaseheading>jhon doe</p>
+
+                                        <p>18 April ,<span class=red>2015</span></p>
+
+                                        <p>nice and cool</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href=# class=clearfix>
+                                    <div class=comment-pic>
+                                        <div class=columnpic><img src="../../../../assets/images/widget/comment03.jpg" alt=image></div>
+                                    </div>
+                                    <div class=commentinfo>
+                                        <p class=uppercaseheading>jhon doe</p>
+
+                                        <p>18 April ,<span class=red>2015</span></p>
+
+                                        <p>nice and cool</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class=footer-type02>
+            <div class=container>
+                <div class=row>
+                    <a href=index-2.html class=footer-logo><img src="../../../../assets/images/logo.png" alt=image></a>
+
+                    <div class=footer-container>
+                        <ul class=clearfix>
+                            <li><a href="https://www.facebook.com/templatespoint.net" class=bigsocial-link><i
+                                        class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/" class=bigsocial-link target=_blank><i
+                                        class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.behance.net/" class=bigsocial-link target=_blank><i
+                                        class="fa fa-behance"></i></a></li>
+                        </ul>
+                        <p><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></p>
+                    </div>
+                    <div class=footer-appstore>
+                        <figure>
+                            <a href=#><img src="../../../../assets/images/appstore/apple.png" alt=image></a>
+                        </figure>
+                        <figure>
+                            <a href=#><img src="../../../../assets/images/appstore/google.png" alt=image></a>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="assets/js/vendor/vendor.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/vendor/apexcharts/apexcharts.min.js"></script>
+<script src="assets/js/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/vendor/quill/quill.min.js"></script>
+<script src="assets/js/vendor/simple-datatables/simple-datatables.js"></script>
+<script src="assets/js/vendor/tinymce/tinymce.min.js"></script>

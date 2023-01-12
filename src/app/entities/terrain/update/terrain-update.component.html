@@ -1,0 +1,64 @@
+<section id="back" class="map_wrapper clearfix">
+    <div id=map-section></div>
+    <div class=container>
+        <div class=row>
+            <div class=contact_form>
+                <h2 class=heading>Ajouter un nouveau <span> CLub </span></h2>
+
+                <p class=headParagraph>Veuillez saisir les informations pour ajouter un nouveau club.</p>
+
+                <form class="formcontact clearfix" name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+
+
+                    <div class="form-group " [hidden]="terrain.id===undefined">
+
+                        <input type="number" placeholder="id" class="form-control" id="id" name="id" [(ngModel)]="terrain.id" formControlName="id" readonly>
+                    </div>
+
+                    <div class="form-group ">
+
+                        <input type="text" placeholder="size " class="form-control" id="size" name="size" [(ngModel)]="terrain.size" formControlName="size">
+                    </div>
+
+
+
+
+                    <div class="form-group">
+                        <input required="true" type="number" placeholder="nbrJoueurs" class="form-control" id="nbrJoueurs" name="nbrJoueurs" [(ngModel)]="terrain.nbrJoueurs" formControlName="nbrJoueurs">
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <input required="true" type="number" placeholder="prix par heure" class="form-control" id="prix" name="prix" [(ngModel)]="terrain.prix" formControlName="prix">
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <input required="true" type="text" placeholder="description" class="form-control" id="description" name="description" [(ngModel)]="terrain.description" formControlName="description">
+
+                    </div>
+
+
+                    <div class="form-group" hidden>
+                        <input required="true" type="text" placeholder="club" class="form-control" id="club" name="club" [(ngModel)]=" terrain.club" formControlName="club">
+                    </div>
+                    <h1>
+                        {{terrain.club}}</h1>
+                    <div class="form-group">
+                        <input type="file" (change)="onFileChanged($event)">
+                    </div>
+
+
+
+
+
+
+                    <button type=submit class="btn btn-red" id=send>send Us</button>
+                    <div class=form-message></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,50 @@
+<section id="back" class="map_wrapper clearfix">
+    <div id=map-section></div>
+    <div class=container>
+        <div class=row>
+            <div class=contact_form>
+                <h2 class=heading>Great <span> Choice</span></h2>
+
+                <p class=headParagraph>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat quisquam reprehenderit, blanditiis nam debitis libero facilis illum repudiandae eveniet voluptatibus quibusdam illo ea nisi ipsa accusantium nobis animi asperiores quaerat
+                    ,Lorem ipsum dolor sit amet .</p>
+
+
+                <form name=editForm role="form" class="formcontact clearfix" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+                    <div  [hidden]="true" class=form-group><input type=number class=form-control name=reservation.id [(ngModel)]="reservation.id" id="reservation.id" placeholder="reservation.id" required="" data-parsley-required-message="please insert reservation.id" readonly formControlName="id">
+                    </div>
+                    <div class=form-group>
+                        <input type=number class=form-control name=nbrjoueur [(ngModel)]="reservation.nbrjoueur" id="nbrjoueur" (ngModelChange)="etatique()" placeholder=nbrjoueur required="" data-parsley-required-message="please insert reservation.nbrjoueur"
+                            formControlName="nbrjoueur">
+                    </div>
+                    <div class=form-group>
+                        <input type=date [(ngModel)]="reservation.date" (ngModelChange)="loadCreneau();" class=form-control name=reservation.date id="reservation.date" placeholder=date required="" data-parsley-required-message="please insert  reservation.date "
+                            formControlName="date">
+                    </div>
+
+                    <div class=form-group [hidden]="true">
+                        <select style="color: gray; background-color:rgba(0, 0, 0, 0.2); -webkit-appearance:none;" [(ngModel)]="reservation.terrain"  aria-readonly="true" (ngModelChange)="changeterain()" name="terrain" id="terrain" class="unconditionnaly form-control" formControlName="terrain">
+                            <option value="" selected disabled hidden>--TimeFrame Available--</option>
+                            <option *ngFor='let o of listTerrain' value="{{o.id}}">{{o.description}}</option>
+                    
+                        </select>
+                    </div>
+
+                    <div class=form-group [hidden]="true"><input type=number class=form-control name=reservation.reservedBy id="reservation.reservedBy" [(ngModel)]="reservation.reservedBy" (ngModelChange)="getClient()" placeholder=reservation.reservedBy required="" data-parsley-required-message="please insert reservation.reservedBy"
+                            formControlName="reservedBy">
+                    </div>
+                    <div class=form-group>
+                        <select style="color: gray; background-color:rgba(0, 0, 0, 0.2); -webkit-appearance:none;" [(ngModel)]="reservation.creneau" (ngModelChange)="change()"  name="creneau" id="creneau" class="unconditionnaly form-control" formControlName="creneau">
+                            <option value="" selected disabled hidden>--TimeFrame Available--</option>
+                            <option *ngFor='let o of availablecreneau' value="{{o.id}}">De {{o.heureDebut}} a {{o.heureFin}}</option>
+                           
+                        </select>
+                    </div>
+
+
+                    <button type=submit class="btn btn-red">send Us</button>
+                    <div class=form-message></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

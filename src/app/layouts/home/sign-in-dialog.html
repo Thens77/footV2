@@ -1,0 +1,59 @@
+
+    <div class="tg-modal-content">
+        <div class="tg-formarea">
+            <div class="tg-border-heading">
+                <h3>Login</h3>
+            </div>
+                
+            <form class="tg-loginform" method="post"  [formGroup]="editForm"  *ngIf="!isLoggedIn"
+            name="form"
+            (ngSubmit)=" doLogin()"
+            #f="ngForm"
+            novalidate>
+            <div class="form-group">
+            <div
+                  class="alert alert-danger"
+                  role="alert"
+                  *ngIf="f.submitted && isLoginFailed"
+                >
+                   {{ errorMessage }}
+                </div>
+              </div>
+                <fieldset>
+                    <div class="form-group">
+                        <input type="text" matInput  formControlName="username" class="validate" name="username" class="form-control" placeholder="username/email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" matInput  formControlName="password" class="validate" name="password" class="form-control" placeholder="password">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" value="rememberme" class="checkbox">
+                            <em>Remember Me</em>
+                        </label>
+                        <a href="#">
+                            <em>Forgot Password</em>
+                            <i class="fa fa-question-circle"></i>
+                        </a>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Login Now" class="tg-btn tg-btn-lg">
+                    </div>
+                    <div class="tg-description">
+                        <p>Don't have an account? <a href="#">Signup</a></p>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="tg-logintype">
+            <div class="tg-border-heading">
+                <h3>Login with</h3>
+            </div>
+            <ul>
+                <li class="tg-facebook"><a href="#">facebook</a></li>
+                <li class="tg-twitter"><a href="#">twitter</a></li>
+                <li class="tg-googleplus"><a href="#">google+</a></li>
+                <li class="tg-linkedin"><a href="#">linkedin</a></li>
+            </ul>
+        </div>
+    </div>

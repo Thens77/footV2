@@ -1,0 +1,59 @@
+<table class="table align-middle mb-0 bg-white">
+    <thead class="bg-light">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Id fiscal</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let club of clubs">
+        <td>
+            <p class="fw-normal mb-1">{{club.id}}</p>
+           
+          </td>
+        <td>
+          <div class="d-flex align-items-center">
+             <img [src]="club.picByte"
+                alt=""
+                style="width: 45px; height: 45px"
+                class="rounded-circle"
+                />
+            <div class="ms-3">
+              <p class="fw-bold mb-1">{{club.clubName}}</p>
+              <p class="text-muted mb-0">{{club.description}}</p>
+            </div>
+          </div>
+        </td>
+        <td>
+          <p class="fw-normal mb-1">{{club.idFiscal}}</p>
+        
+        </td>
+        <td>
+          <span class="badge badge-success rounded-pill d-inline">{{club.etat}}</span>
+        </td>
+       
+        <td>
+          <button type="button" [routerLink]="['/dashboard/client', club.id, 'details']" class="btn btn-primary m-3" data-cy="entityDetailsButton">
+          
+            <i class="far fa-eye"></i>
+          </button>
+        
+          
+<button type="submit" [routerLink]="['/dashboard/gestion' ]" [state]="{ idc: club.id }" class="btn btn-success m-3" data-cy="entityEditButton">
+
+<i class="fas fa-edit"></i> 
+</button>
+
+
+
+<button type="submit" (click)="delete(club.id)" class="btn btn-danger m-3" data-cy="entityDeleteButton">
+<i class="far fa-trash-alt"></i> 
+</button>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
